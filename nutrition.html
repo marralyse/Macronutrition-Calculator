@@ -1,0 +1,268 @@
+<!DOCTYPE html>	
+	<head>
+	<link rel="stylesheet" type="text/css" href="nutrition.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src= "nutrition.js"></script>
+<link rel="stylesheet" type="text/css" href="nutrition.css">	
+</head>
+
+<h1 id="title">Macronutrition Weekly Plan</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4" id="leftside">
+	<h3><center>Enter Your Measurements<center></h3><br>	
+	<div id = "measurements" >
+	<form name = "userInput">
+		<table class = "input">
+			<tr>
+				<td><input type="radio" name="gender" value="male" id= "male" checked="checked"> Male</td>
+				<td><input type="radio" name="gender" value="female" id="female"> Female</td>
+			</tr>
+			<tr>
+				<td class="input-labels">Height</td>
+				<td ><input type="number" id="height">in</td>
+			</tr>
+			<tr>
+				<td class="input-labels">Weight</td>
+				<td ><input type="number" id="weight">lbs</td>
+			</tr>
+			<tr>
+				<td class="input-labels">Waist</td>
+				<td ><input type="number" id="waist">in</td>
+			</tr>
+			<tr>
+				<td class="input-labels">Neck</td>
+				<td ><input type="number" id="neck">in</td>
+			</tr>
+			<tr>
+				<td class="input-labels">Hip</td>
+				<td ><input type="number" id="hip">in</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" id = "calculate" value="Calculate"></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+	<br>
+	<br>
+	<br>
+	<table class = "bodyFat">
+	<p><center><strong>Measurement Calculations</strong><center></p>
+		<tr>
+			<td>Body Fat Percentage</td><td><div id="bfone"></div></td>
+		</tr>
+		<tr>
+			<td>Lean Body Mass</td><td><div id="lbm"></div></td>
+		</tr>
+		<tr>
+			<td>BMR-</td><td><div id="bmrneg"></div></td>
+		</tr>
+		<tr>
+			<td>BMR+</td><td><div id="bmrpos"></div></td>
+		</tr>
+	</table>
+
+	</div>
+    <div class="col-sm-8" id= "rightside">	
+
+<div id ="macronutrients">
+<h1><center>Results<center></h1>
+<table>
+	<tr>
+		<td><strong>Daily Water Intake: </strong></td><td id= "water_intake"></td> 
+	</tr>
+	<tr>
+		<td><strong>Daily Fiber Intake: </strong></td><td id="fiber_intake"></td><br>
+	</tr>	
+</table>	
+<br>
+<h4 class="week">Week 1</h4>
+	<table class ="food">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Mon</th>
+				<th>Tue</th>
+				<th>Wed</th>
+				<th>Thur</th>
+				<th>Fri</th>
+				<th>Sat</th>
+				<th>Sun</th>
+			<tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="type" >Protein</td>
+				<td id="promon"></td>
+				<td id="protue"></td>
+				<td id="prowed" ></td>
+				<td id="prothu" ></td>
+				<td id="profri" ></td>
+				<td id="prosat" ></td>
+				<td id="prosun" ></td>
+			</tr>
+			<tr>
+				<td class="type">Carbs</td>
+				<td id="carbmon" ></td>
+				<td id="carbtue" ></td>
+				<td id="carbwed" ></td>
+				<td id="carbthu" ></td>
+				<td id="carbfri" ></td>
+				<td id="carbsat" ></td>
+				<td id="carbsun" ></td>
+			</tr>
+			<tr>
+				<td class= "type">Fat</td>
+				<td id="fatmon" ></td>
+				<td id="fattue" ></td>
+				<td id="fatwed" ></td>
+				<td id="fatthu" ></td>
+				<td id="fatfri" ></td>
+				<td id="fatsat" ></td>
+				<td id="fatsun" ></td>
+			</tr>
+			<!--<tr>
+				<td class= "type">Calories</td>
+				<td id="calmon" ></td>
+				<td id="caltue" ></td>
+				<td id="calwed" ></td>
+				<td id="calthu" ></td>
+				<td id="calfri" ></td>
+				<td id="calsat" ></td>
+				<td id="calsun" ></td>
+			</tr>-->
+		</tbody>
+	</table>
+
+<h4 class="week">Week 2</h4>
+	<table class ="food">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Mon</th>
+				<th>Tue</th>
+				<th>Wed</th>
+				<th>Thur</th>
+				<th>Fri</th>
+				<th>Sat</th>
+				<th>Sun</th>
+			<tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="type" >Protein</td>
+				<td id="promontwo"></td>
+				<td id="protuetwo"></td>
+				<td id="prowedtwo" ></td>
+				<td id="prothutwo" ></td>
+				<td id="profritwo" ></td>
+				<td id="prosattwo" ></td>
+				<td id="prosuntwo" ></td>
+			</tr>
+			<tr>
+				<td class="type">Carbs</td>
+				<td id="carbmontwo" ></td>
+				<td id="carbtuetwo" ></td>
+				<td id="carbwedtwo" ></td>
+				<td id="carbthutwo" ></td>
+				<td id="carbfritwo" ></td>
+				<td id="carbsattwo" ></td>
+				<td id="carbsuntwo" ></td>
+			</tr>
+			<tr>
+				<td class= "type">Fat</td>
+				<td id="fatmontwo" ></td>
+				<td id="fattuetwo" ></td>
+				<td id="fatwedtwo" ></td>
+				<td id="fatthutwo" ></td>
+				<td id="fatfritwo" ></td>
+				<td id="fatsattwo" ></td>
+				<td id="fatsuntwo" ></td>
+			</tr>
+			<!--<tr>
+				<td class= "type">Calories</td>
+				<td id="calmontwo" ></td>
+				<td id="caltuetwo" ></td>
+				<td id="calwedtwo" ></td>
+				<td id="calthutwo" ></td>
+				<td id="calfritwo" ></td>
+				<td id="calsattwo" ></td>
+				<td id="calsuntwo" ></td>
+			</tr>-->
+		</tbody>
+	</table>
+<h4>Week 3</h4>
+	<table class ="food">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Mon</th>
+				<th>Tue</th>
+				<th>Wed</th>
+				<th>Thur</th>
+				<th>Fri</th>
+				<th>Sat</th>
+				<th>Sun</th>
+			<tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="type" >Protein</td>
+				<td id="promonthree"></td>
+				<td id="protuethree"></td>
+				<td id="prowedthree" ></td>
+				<td id="prothuthree" ></td>
+				<td id="profrithree" ></td>
+				<td id="prosatthree" ></td>
+				<td id="prosunthree" ></td>
+			</tr>
+			<tr>
+				<td class="type">Carbs</td>
+				<td id="carbmonthree" ></td>
+				<td id="carbtuethree" ></td>
+				<td id="carbwedthree" ></td>
+				<td id="carbthuthree" ></td>
+				<td id="carbfrithree" ></td>
+				<td id="carbsatthree" ></td>
+				<td id="carbsunthree" ></td>
+			</tr>
+			<tr>
+				<td class= "type">Fat</td>
+				<td id="fatmonthree" ></td>
+				<td id="fattuethree" ></td>
+				<td id="fatwedthree" ></td>
+				<td id="fatthuthree" ></td>
+				<td id="fatfrithree" ></td>
+				<td id="fatsatthree" ></td>
+				<td id="fatsunthree" ></td>
+			</tr>
+			<!--<tr>
+				<td class= "type">Calories</td>
+				<td id="calmonthree" ></td>
+				<td id="caltuethree" ></td>
+				<td id="calwedthree" ></td>
+				<td id="calthuthree" ></td>
+				<td id="calfrithree" ></td>
+				<td id="calsatthree" ></td>
+				<td id="calsunthree" ></td>
+			</tr>-->
+		</tbody>
+	</table>
+	</div>
+	</div>
+	</div>
+
+</div>
+</body>
+
+
